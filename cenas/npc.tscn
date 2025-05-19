@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqqdw61spkha3"]
+
+[ext_resource type="Script" uid="uid://bs87apgsrprft" path="res://scripts/npc.gd" id="1_bfr8n"]
+[ext_resource type="Texture2D" uid="uid://emtxiht5ged" path="res://assets/andando 1.png" id="2_8ldtk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itdco"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ldtk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbs73"]
+bg_color = Color(0.156863, 0.219608, 0.32549, 0.501961)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1af0d"]
+size = Vector2(150.07, 255.914)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j76b0"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Professora" type="Area2D"]
+script = ExtResource("1_bfr8n")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_itdco")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="caixa_dialogo" type="Label" parent="CanvasLayer"]
+offset_left = 24.0
+offset_top = 454.0
+offset_right = 1124.0
+offset_bottom = 604.0
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_xbs73")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texto_Dialogo" type="Label" parent="CanvasLayer"]
+offset_left = 63.0
+offset_top = 467.0
+offset_right = 1063.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.79862, 2.5)
+rotation = -3.14159
+scale = Vector2(1.75649, -0.597858)
+shape = SubResource("RectangleShape2D_1af0d")
+
+[node name="Labelinteracao" type="Label" parent="."]
+offset_left = -22.0
+offset_top = -82.0
+offset_right = 18.0
+offset_bottom = -59.0
+label_settings = SubResource("LabelSettings_j76b0")

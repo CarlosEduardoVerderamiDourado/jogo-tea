@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://b4untliq8seir"]
+[gd_scene load_steps=36 format=4 uid="uid://b4untliq8seir"]
 
 [ext_resource type="Texture2D" uid="uid://ck4p6t8ocwmnn" path="res://assets/2dClassroomAssetPackByStyloo/WallFloorDoorWstroke/Wallfloordoorw First Spritesheet 3.png" id="1_ge8mc"]
 [ext_resource type="Texture2D" uid="uid://ybto08y7gv0c" path="res://assets/2dClassroomAssetPackByStyloo/Classroom 2 Props/Classroom Props Second Spritesheet 1.png" id="1_tggv0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://oi6nf1y8ul0r" path="res://assets/2dClassroomAssetPackByStyloo/Classroom/Classroom Second Spritesheet 8.png" id="7_ge8mc"]
 [ext_resource type="Texture2D" uid="uid://chsocxegedxxa" path="res://assets/2dClassroomAssetPackByStyloo/Classroom/Classroom Second Spritesheet 3.png" id="8_8t630"]
 [ext_resource type="PackedScene" uid="uid://cmeexojdpeh8u" path="res://cenas/player.tscn" id="10_8t630"]
+[ext_resource type="PackedScene" uid="uid://bqqdw61spkha3" path="res://cenas/npc.tscn" id="12_i8r7k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlani"]
 texture = ExtResource("1_ge8mc")
@@ -103966,10 +103967,6 @@ tile_set = SubResource("TileSet_sdo6p")
 use_parent_material = true
 tile_set = SubResource("TileSet_sdo6p")
 
-[node name="player" parent="." instance=ExtResource("10_8t630")]
-position = Vector2(242, 167)
-collision_mask = 1
-
 [node name="CollisionsMesas" parent="." instance=ExtResource("7_3fp15")]
 position = Vector2(58, 329)
 
@@ -104018,3 +104015,9 @@ shape = SubResource("RectangleShape2D_wkvgs")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="LimiteDaSala"]
 position = Vector2(551, 632)
 shape = SubResource("RectangleShape2D_uqgj4")
+
+[node name="player" parent="." instance=ExtResource("10_8t630")]
+position = Vector2(246, 220)
+
+[node name="Professora" parent="." instance=ExtResource("12_i8r7k")]
+position = Vector2(789, 275)
