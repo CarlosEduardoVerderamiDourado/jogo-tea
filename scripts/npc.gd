@@ -29,7 +29,7 @@ func _process(_delta)->void:
 func _on_body_entered(body) -> void:
 	if body.name =="player":
 		player_in_area = true
-		laber_interacao.tex= "Pressione 'E' para interagir"
+		laber_interacao.text = "Pressione 'E' para interagir"
 		laber_interacao.visible = true
 		
 
@@ -52,7 +52,7 @@ func iniciar_dialogo():
 func proxima_fala():
 	if fala_index < falas.size():
 		pode_avansar = false
-		texto_dialogo.texto = ""
+		texto_dialogo.text = ""
 		var texto = falas[fala_index]
 		fala_index += 1
 		mostrar_texto_com_efeito(texto)
@@ -60,10 +60,10 @@ func proxima_fala():
 		encerrar_dialogo()
 
 func mostrar_texto_com_efeito(texto: String):
-	await get_tree().create_timer(0.1).tineout
+	await get_tree().create_timer(0.1).timeout
 	for letra in texto:
-		texto_dialogo.texto += letra
-	await get_tree().create_timer(0.02).tineout
+		texto_dialogo.text += letra
+	await get_tree().create_timer(0.02).timeout
 	pode_avansar = true
 
 
@@ -72,3 +72,4 @@ func encerrar_dialogo():
 	pode_avansar = false
 	caixa_dialogo.visible = false
 	texto_dialogo.visible = false
+	get_tree().change_scene_to_file("res://cenas/player.tscn")

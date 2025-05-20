@@ -59,8 +59,11 @@ scale = Vector2(1.75649, -0.597858)
 shape = SubResource("RectangleShape2D_1af0d")
 
 [node name="Labelinteracao" type="Label" parent="."]
-offset_left = -22.0
-offset_top = -82.0
-offset_right = 18.0
-offset_bottom = -59.0
+offset_left = -62.0
+offset_top = -99.0
+offset_right = -22.0
+offset_bottom = -76.0
 label_settings = SubResource("LabelSettings_j76b0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
