@@ -1,0 +1,55 @@
+[gd_scene load_steps=14 format=3 uid="uid://coaq1c1obnyp6"]
+
+[ext_resource type="Script" uid="uid://1bmm8q4womh6" path="res://mmg/livros/script/instance_objetcs.gd" id="1_3rn4x"]
+[ext_resource type="PackedScene" uid="uid://c5epn1fqjs8sg" path="res://mmg/livros/cenas/cesto.tscn" id="1_h2cyb"]
+[ext_resource type="Script" uid="uid://dv7ut3hkvgifm" path="res://mmg/livros/script/livros.gd" id="2_k8itr"]
+[ext_resource type="PackedScene" uid="uid://db05idgoi568k" path="res://mmg/livros/cenas/livro errado.tscn" id="3_k8itr"]
+[ext_resource type="PackedScene" uid="uid://dd8xwn6nuju4f" path="res://mmg/livros/cenas/livro azul.tscn" id="4_s6ras"]
+[ext_resource type="PackedScene" uid="uid://f5hki0dagf5a" path="res://mmg/livros/cenas/livro laranja.tscn" id="5_oglc8"]
+[ext_resource type="PackedScene" uid="uid://ditbok5newwq8" path="res://mmg/livros/cenas/livro verde.tscn" id="6_m4jdx"]
+[ext_resource type="PackedScene" uid="uid://bba4wy0nydv4m" path="res://mmg/livros/cenas/livro marrom.tscn" id="7_g3yj5"]
+[ext_resource type="Texture2D" uid="uid://7diei61u8pdv" path="res://mmg/livros/Assets/FUNDO.jpg" id="8_k8itr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yt2gt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbn41"]
+radius = 121.643
+
+[sub_resource type="PackedScene" id="PackedScene_oglc8"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741827, 1073741826, 11, 10, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("Banana", "Area2D", "script", "Sprite2D", "Sprite2D", "texture", "CollisionShape2D", "CollisionShape2D", "position", "shape", "_on_area_entered", "area_entered"),
+"node_count": 3,
+"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 1, 5, 1, 0, 1073741825, 0, 7, 6, -1, 2, 8, 2, 9, 3, 0),
+"variants": [ExtResource("2_k8itr"), SubResource("CompressedTexture2D_yt2gt"), Vector2(-26, -25), SubResource("CircleShape2D_hbn41")],
+"version": 3
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8w4s"]
+font_size = 21
+font_color = Color(0.405086, 0.708036, 0.987835, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3rn4x")
+objects = Array[PackedScene]([SubResource("PackedScene_oglc8"), ExtResource("3_k8itr"), ExtResource("4_s6ras"), ExtResource("5_oglc8"), ExtResource("6_m4jdx"), ExtResource("7_g3yj5")])
+
+[node name="BACKGROUND" type="Sprite2D" parent="."]
+position = Vector2(270.5, 325)
+scale = Vector2(0.839063, 1.00937)
+texture = ExtResource("8_k8itr")
+
+[node name="Cesto" parent="." instance=ExtResource("1_h2cyb")]
+position = Vector2(55, 575)
+scale = Vector2(0.4, 0.4)
+
+[node name="pontos" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 552.0
+offset_bottom = 74.0
+text = "PEGUE SOMENTE OS LIVROS QUE MARIA PEDIU:"
+label_settings = SubResource("LabelSettings_k8w4s")
+vertical_alignment = 1
