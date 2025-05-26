@@ -17,8 +17,11 @@ func _process(delta):
 	if time > time_limit:
 		create_objects()
 		time = 0
+<<<<<<< HEAD
 	if pontos >= 100 : 
 		voltar_faze1()
+=======
+>>>>>>> ff74910 (v0.5)
 	$pontos.text = "PEGUE SOMENTE OS LIVROS QUE MARIA PEDIU: " + str(pontos)
 
 
@@ -32,6 +35,11 @@ func create_objects():
 	i = randi_range(0,5)
 	pos = randf_range(50,520)
 	time_limit = randf_range(0.5,1.5)
+<<<<<<< HEAD
+=======
+	if pontos >= 100 : 
+		voltar_faze1()
+>>>>>>> ff74910 (v0.5)
 	
 func voltar_faze1():
 	get_tree().change_scene_to_file("res://cenas/fase1.tscn")
